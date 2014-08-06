@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--只是一个空对象-->
+    <bean id="empty" class="org.fightteam.spring.User"></bean>
+
+    <!--只是一个有值对象-->
+    <bean id="faith" class="org.fightteam.spring.User">
+        <property name="username" value="faith"/>
+        <property name="nickname" value="欧阳澄泓"/>
+    </bean>
+
+</beans>
