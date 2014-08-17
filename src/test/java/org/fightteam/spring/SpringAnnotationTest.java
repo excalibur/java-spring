@@ -15,10 +15,18 @@ public class SpringAnnotationTest {
      */
     @Test
     public void test01() throws Exception {
-        //1
         ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
         User faith = (User) ctx.getBean("faith");
         System.out.println(faith);
+        User faith2 = (User) ctx.getBean("user");
+        System.out.println(faith2);
+
+    }
+
+    @Test
+    public void test02() throws Exception {
+        Student student = new Student("faith");
+
 
     }
 }

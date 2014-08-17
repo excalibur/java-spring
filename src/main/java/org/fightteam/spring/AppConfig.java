@@ -2,11 +2,15 @@ package org.fightteam.spring;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Primary;
 
 /**
  * Created by excalibur on 2014/8/14.
  */
-@Configuration
+//@Configuration
+@Lazy
+@Primary
 public class AppConfig {
 
     @Bean
