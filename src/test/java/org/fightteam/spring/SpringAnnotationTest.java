@@ -1,7 +1,10 @@
 package org.fightteam.spring;
 
 import org.junit.Test;
+import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationEvent;
+import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.GenericApplicationContext;
@@ -67,16 +70,35 @@ public class SpringAnnotationTest {
 //        Role role = (Role) ctx.getBean("role");
 //        System.out.println(role);
 
-        ctx.registerAlias("user", "user2");
+//        ctx.registerAlias("user", "user2");
 //
 //        User faith2 = (User) ctx.getBean("user2");
 //        System.out.println(faith2);
 
-        String[] names = ctx.getAliases("faith");
+//        String[] names = ctx.getAliases("faith");
+//
+//        for (String name : names){
+//            System.out.println(name);
+//        }
+//
+//        ctx.addApplicationListener(new ApplicationListener<ApplicationEvent>() {
+//            @Override
+//            public void onApplicationEvent(ApplicationEvent applicationEvent) {
+//                System.out.println(applicationEvent.getTimestamp());
+//                System.out.println(applicationEvent.getSource());
+//            }
+//        });
+//        ctx.publishEvent(new ApplicationEvent("--------") {
+//            @Override
+//            public Object getSource() {
+//                return super.getSource();
+//            }
+//        });
 
-        for (String name : names){
-            System.out.println(name);
-        }
+
+        System.out.println(ctx.getId());
+        System.out.println(ctx.getDisplayName());
+
     }
 
     @Test
@@ -100,6 +122,13 @@ public class SpringAnnotationTest {
         System.out.println(resourceLoader.getClassLoader());
 
         System.out.println("12345".substring(3));
+
+    }
+
+
+    @Test
+    public void test04() throws Exception {
+        BeanFactoryPostProcessor beanFactoryPostProcessor = new BeanFactoryPostProcessor();
 
     }
 }
