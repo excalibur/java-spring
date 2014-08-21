@@ -1,8 +1,11 @@
 package org.fightteam.spring;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Created by excalibur on 2014/8/5.
  */
+@Component
 public class User {
     private String username;
     private String nickname;
