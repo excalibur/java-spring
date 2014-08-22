@@ -43,17 +43,17 @@ public class AppConfig implements Lifecycle {
 
     @Override
     public void start() {
-        System.out.println("-------start-----------");
+        System.out.println("-------start-111----------");
     }
 
     @Override
     public void stop() {
-        System.out.println("-----------stop----------");
+        System.out.println("-----------stop---111-------");
     }
 
     @Override
     public boolean isRunning() {
-        System.out.println("---------isRunning--------");
-        return false;
+        System.out.println("---------isRunning--111------");
+        return true;
     }
 }

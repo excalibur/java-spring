@@ -2,11 +2,14 @@ package org.fightteam.spring;
 
 import org.junit.Test;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ConfigurationClassPostProcessor;
 import org.springframework.context.support.GenericApplicationContext;
 import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.Resource;
@@ -26,7 +29,7 @@ public class SpringAnnotationTest {
      */
     @Test
     public void test01() throws Exception {
-        GenericApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
 
 //        User faith = (User) ctx.getBean("faith");
 //        System.out.println(faith);
@@ -96,9 +99,11 @@ public class SpringAnnotationTest {
 //        });
 
 
-        System.out.println(ctx.getId());
-        System.out.println(ctx.getDisplayName());
+//        System.out.println(ctx.getId());
+//        System.out.println(ctx.getDisplayName());
 
+        //User faith = ctx.getBean("fatih", User.class);
+        //ctx.gett
     }
 
     @Test
@@ -128,7 +133,15 @@ public class SpringAnnotationTest {
 
     @Test
     public void test04() throws Exception {
-        BeanFactoryPostProcessor beanFactoryPostProcessor = new BeanFactoryPostProcessor();
+       BeanFactoryPostProcessor beanFactoryPostProcessor = new ConfigurationClassPostProcessor();
+        GenericApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+        ConfigurableListableBeanFactory beanFactory = new DefaultListableBeanFactory(ctx);
+        Role role = new Role();
+//        beanFactory.addBeanPostProcessor(role);
+
+        //.beanFactory.
+        beanFactoryPostProcessor.postProcessBeanFactory(beanFactory);
+
 
     }
 }

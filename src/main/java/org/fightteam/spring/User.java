@@ -10,6 +10,10 @@ public class User {
     private String username;
     private String nickname;
 
+    public User() {
+        System.out.println("--------初始化---------");
+    }
+
     public String getUsername() {
         return username;
     }
