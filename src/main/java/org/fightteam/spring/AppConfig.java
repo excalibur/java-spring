@@ -24,7 +24,7 @@ public class AppConfig implements Lifecycle {
     }
 
 
-    @Bean(name = {"faith2"})
+    @Bean(name = {"faith"})
     public User faith2(){
         User faith = new User();
         faith.setUsername("faith2");

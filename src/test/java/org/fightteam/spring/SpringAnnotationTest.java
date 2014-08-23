@@ -144,4 +144,15 @@ public class SpringAnnotationTest {
 
 
     }
+
+
+    @Test
+    public void test05() throws Exception {
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+
+
+        ctx.setAllowBeanDefinitionOverriding(false);
+
+
+    }
 }
