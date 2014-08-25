@@ -78,4 +78,17 @@ public class ClassUtilsTest {
 
 
     }
+
+    int align2grant(int i, int grain){
+        return ((i + grain-1) & ~(grain-1));
+    }
+
+    @Test
+    public void test05() throws Exception {
+        // i 01; 10
+        // grain 10; 01 10
+
+        System.out.println(align2grant(1, 2));
+
+    }
 }
