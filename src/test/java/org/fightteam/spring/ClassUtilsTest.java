@@ -13,6 +13,7 @@ import java.util.List;
  * Created by excalibur on 2014/8/23.
  */
 public class ClassUtilsTest {
+    private static final String NAME_PATH = "111";
 
     @Test
     public void test01() throws Exception {
