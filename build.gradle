@@ -4,41 +4,40 @@ sourceCompatibility = 1.8
 version = '1.0'
 
 repositories {
-//    mavenLocal()
+    mavenLocal()
     mavenCentral()
+    maven { url "http://repo.spring.io/release" }
 }
 
 
 dependencies {
 //    compile 'org.springframework:spring-context:4.1.0.BUILD-SNAPSHOT'
     compile 'org.springframework:spring-context:4.0.6.RELEASE'
+    compile 'org.springframework:spring-web:4.0.6.RELEASE'
+    compile 'org.springframework:spring-webmvc:4.0.6.RELEASE'
+    testCompile("org.springframework:spring-test:4.0.6.RELEASE")
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
 
+// ==================================
 file("$rootDir/config").listFiles().each { File f ->
 
-    task ("${f.name}", dependsOn:["compileJava", "processResources"]){
+    task ("${f.name}", dependsOn:["compileJava", "processResources", "classes"]){
         description = "package war in ${f.name} environment"
+
         doLast {
-            println "MYDIST-" + f.name
-            copy {
+            println ':copy'
+            copy{
                 from "${f}"
-                into "$buildDir/resources/main/"
+                into "$buildDir/resources/main"
                 include "**/*"
             }
 
-            doLast(classes, war){
 
-            }
-            a
-            println ':classes'
-            if (project.tasks.getByName("classes").getState().skipped)
-            tasks.classes.execute();
-            project.tasks.getByName("classes");
-            classes.execute();
             println ':war'
             war.execute();
         }
+
     }
 
 }

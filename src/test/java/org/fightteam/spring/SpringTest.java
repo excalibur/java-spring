@@ -77,4 +77,23 @@ public class SpringTest {
         System.out.println(environment.resolvePlaceholders("$[JAVA_HOME]aaaa"));
         System.out.println(environment.resolvePlaceholders("$(JAVA_HOME)aaaa"));
     }
+
+    @Test
+    public void test05() throws Exception {
+        String a = "1111";
+        String a2 = "1111";
+        String b = "2222";
+        String c = a + b;
+        String c2 = "1111" + "2222";
+        String d = "11112222";
+        String e = new String("11112222");
+        System.out.println(a == a2);
+        System.out.println(c == d);
+        System.out.println(c2 == d);
+        System.out.println(c == (a + b));
+        System.out.println(d = (a + b));
+        System.out.println(d == e);
+
+
+    }
 }
