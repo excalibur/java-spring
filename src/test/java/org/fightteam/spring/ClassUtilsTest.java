@@ -13,6 +13,7 @@ import java.util.List;
  * Created by excalibur on 2014/8/23.
  */
 public class ClassUtilsTest {
+    private static final String NAME_PATH = "111";
 
     @Test
     public void test01() throws Exception {
@@ -76,6 +77,19 @@ public class ClassUtilsTest {
             }
         }
 
+
+    }
+
+    int align2grant(int i, int grain){
+        return ((i + grain-1) & ~(grain-1));
+    }
+
+    @Test
+    public void test05() throws Exception {
+        // i 01; 10
+        // grain 10; 01 10
+
+        System.out.println(align2grant(1, 2));
 
     }
 }
