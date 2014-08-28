@@ -1,5 +1,6 @@
 package org.fightteam.spring;
 
+import org.fightteam.spring.service.UserService;
 import org.junit.Test;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
@@ -154,5 +155,16 @@ public class SpringAnnotationTest {
         ctx.setAllowBeanDefinitionOverriding(false);
 
 
+    }
+
+
+    @Test
+    public void test06() throws Exception {
+
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+
+        UserService userService = ctx.getBean(UserService.class);
+
+        userService.addUser("faith");
     }
 }
