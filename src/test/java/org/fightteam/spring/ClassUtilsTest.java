@@ -92,4 +92,9 @@ public class ClassUtilsTest {
         System.out.println(align2grant(1, 2));
 
     }
+
+    @Test
+    public void test06() throws Exception {
+
+    }
 }
