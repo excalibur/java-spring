@@ -95,7 +95,15 @@ public class ClassUtilsTest {
 
     @Test
     public void test06() throws Exception {
-        byte a = 2;
+        boolean a = true;
+        byte b = 1;
+        short c = 1;
+        char d = 'c';
+        int e = 1;
+        float f = 1.1F;
+        double g = 1.1;
+
+
 
     }
 }
