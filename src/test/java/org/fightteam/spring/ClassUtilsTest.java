@@ -95,6 +95,7 @@ public class ClassUtilsTest {
 
     @Test
     public void test06() throws Exception {
+        byte a = 2;
 
     }
 }
