@@ -106,4 +106,15 @@ public class ClassUtilsTest {
 
 
     }
+
+    @Test
+    public void test07() throws Exception {
+        // 用来分析jvm
+        List<User> users = new ArrayList<User>();
+
+        for (;;){
+            users.add(new User());
+        }
+
+    }
 }
