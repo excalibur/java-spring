@@ -118,8 +118,8 @@ public class ClassUtilsTest {
 
     @Test
     public void test08() throws Exception {
-        com.sun.tools.javac.main.Main compiler =
-                new com.sun.tools.javac.main.Main("javac");
+//        com.sun.tools.javac.main.Main compiler =
+//                new com.sun.tools.javac.main.Main("javac");
         
     }
 
@@ -146,12 +146,22 @@ public class ClassUtilsTest {
 //        String[] arr = new String[]{"a", "b", "c"};
 //        System.out.println(Arrays.asList(arr).contains("b"));
 
-        ArrayList<String> list = new ArrayList<String>(Arrays.asList("a", "b", "c", "d"));
-        System.out.println(list.size());
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println(i);
-            System.out.println(list.get(i));
-            list.remove(i);
+//        ArrayList<String> list = new ArrayList<String>(Arrays.asList("a", "b", "c", "d"));
+//        System.out.println(list.size());
+//        for (int i = 0; i < list.size(); i++) {
+//            System.out.println(i);
+//            System.out.println(list.get(i));
+//            list.remove(i);
+//        }
+//        System.out.println(list);
+
+        ArrayList<String> list = new ArrayList<String>();
+        list.add("a");
+        list.add("b");
+        list.add("c");
+        for(String a : list){
+            System.out.println(a);
+            list.remove(a);
         }
         System.out.println(list);
     }
