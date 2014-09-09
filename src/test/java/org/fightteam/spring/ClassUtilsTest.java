@@ -5,9 +5,7 @@ import org.springframework.util.ClassUtils;
 
 import java.io.File;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by excalibur on 2014/8/23.
@@ -116,5 +114,45 @@ public class ClassUtilsTest {
             users.add(new User());
         }
 
+    }
+
+    @Test
+    public void test08() throws Exception {
+        com.sun.tools.javac.main.Main compiler =
+                new com.sun.tools.javac.main.Main("javac");
+        
+    }
+
+    @Test
+    public void test09() throws Exception {
+
+//        String[] arr = new String[]{"a", "b", "c"};
+//        List<String> list = Arrays.asList(arr);
+//        System.out.println(list);
+//        list.add("d");
+//        System.out.println(list);
+
+
+//        String[] arr = new String[]{"a", "b", "c"};
+//        List<String> list = new ArrayList<String>(Arrays.asList(arr));
+//        System.out.println(list);
+//        list.add("d");
+//        System.out.println(list);
+
+//        String[] arr = new String[]{"a", "b", "c"};
+//        Set<String> set = new HashSet<String>(Arrays.asList(arr));
+//        System.out.println(set.contains("b"));
+
+//        String[] arr = new String[]{"a", "b", "c"};
+//        System.out.println(Arrays.asList(arr).contains("b"));
+
+        ArrayList<String> list = new ArrayList<String>(Arrays.asList("a", "b", "c", "d"));
+        System.out.println(list.size());
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(i);
+            System.out.println(list.get(i));
+            list.remove(i);
+        }
+        System.out.println(list);
     }
 }
