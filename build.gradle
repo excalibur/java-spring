@@ -9,7 +9,10 @@ repositories {
     maven { url "http://repo.spring.io/release" }
 }
 
-configurations { providedCompile }
+configurations {
+    providedCompile
+    jaxDoclet
+}
 dependencies {
 //    compile 'org.springframework:spring-context:4.1.0.BUILD-SNAPSHOT'
     compile 'org.springframework:spring-context:4.0.6.RELEASE'
@@ -22,10 +25,12 @@ dependencies {
 //    compile 'org.aspectj:aspectjrt:1.8.2'
 //    compile 'org.aspectj:aspectjweaver:1.8.2'
 
-
+    providedCompile "org.projectlombok:lombok:1.12.4"
+    compile "com.fasterxml.jackson.core:jackson-databind:2.3.3"
     providedCompile "javax.servlet:javax.servlet-api:3.0.1",
             'javax.servlet.jsp:javax.servlet.jsp-api:2.3.1'
     testCompile group: 'junit', name: 'junit', version: '4.11'
+
 }
 
 // ==================================
@@ -49,4 +54,12 @@ file("$rootDir/config").listFiles().each { File f ->
 
     }
 
+}
+task generateRestApiDocs(type: Javadoc) {
+    source = sourceSets.main.allJava
+    destinationDir = reporting.file("rest-api-docs")
+    options.docletpath = configurations.jaxDoclet.files.asType(List)
+    //options.doclet = "com.lunatech.doclets.jax.jpa.JPADoclet"
+    //options.addStringOption("jaxrscontext", "http://localhost:8080/myapp")
+    options.encoding = "UTF-8"
 }

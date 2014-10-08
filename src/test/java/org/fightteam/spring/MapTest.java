@@ -87,6 +87,6 @@ public class MapTest {
 
     @Test
     public void test07() throws Exception {
-            
+
     }
 }
